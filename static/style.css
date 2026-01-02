@@ -1,0 +1,91 @@
+/* Body with slight move to right using padding */
+body {
+    margin: 0;
+    padding-left: 60px; /* Slight move to right */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F5E7D4; /* Slightly darker cream */
+    color: #222;
+}
+
+/* Header / Welcome section */
+header {
+    width: calc(100% - 60px); /* Adjust for padding-left */
+    padding: 20px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Main layout container */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    min-height: calc(100vh - 80px); /* Subtract header height */
+}
+
+/* Sidebar / Left menu */
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+/* Sidebar buttons / options with numbers */
+.sidebar button {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    background-color: #FFD580;
+    color: #222;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    counter-increment: service; /* Number increment */
+}
+
+/* Add numbers before each button text */
+.sidebar button::before {
+    content: counter(service) ". "; /* Numbering 1. 2. 3. ... */
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* Reset counter for sidebar */
+.sidebar {
+    counter-reset: service;
+}
+
+.sidebar button:hover {
+    background-color: #FFC04D;
+    transform: translateX(5px); /* slight right move on hover */
+}
+
+/* Main content area */
+.content {
+    flex: 1;
+    padding: 40px 50px;
+    background-color: #FDF6EE; /* Slightly lighter cream for content area */
+}
+
+/* Each service section */
+.service {
+    margin-bottom: 40px;
+}
+
+.service h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service p {
+    font-size: 16px;
+    line-height: 1.6;
+}

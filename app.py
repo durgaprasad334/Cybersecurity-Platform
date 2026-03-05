@@ -3,7 +3,7 @@ from port_scanner import port_scanner
 
 app = Flask(__name__)
 
-# ===== WELCOME PAGE =====
+
 @app.route("/")
 def index():
     return render_template("index.html")
